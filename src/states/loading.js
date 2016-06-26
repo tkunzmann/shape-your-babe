@@ -46,15 +46,19 @@ TemplateGame.Loading.preload = function () {
 	this.addImage( "kiwiName", "assets/img/kiwijs-name.png" );
 	this.addSpriteSheet( "icons", "assets/img/kiwijs-icons.png", 100, 90 );
 
-	this.addSpriteSheet('buttons', "assets/img/buttons.png", 80, 80, true, 11, 11, 1);
-
   this.addImage('grundform', 'assets/img/body/grundform.png');
+	this.addSpriteSheet('bg', "assets/img/bg.png", 700, 990 );
+	this.addSpriteSheet('buttons', "assets/img/buttons.png", 80, 80, true, 22, 11, 2);
+
 	this.addSpriteSheet('arme', "assets/img/body/arme.png", 700, 990 );
 	this.addSpriteSheet('beine', "assets/img/body/beine.png", 700, 990 );
 	this.addSpriteSheet('backen', "assets/img/body/backen.png", 700, 990 );
 	this.addSpriteSheet('windeln', "assets/img/body/windeln.png", 700, 990 );
-
-
+	this.addSpriteSheet('augen', "assets/img/body/augen.png", 700, 990 );
+	this.addSpriteSheet('nasen', "assets/img/body/nasen.png", 700, 990 );
+	this.addSpriteSheet('muender', "assets/img/body/muender.png", 700, 990 );
+	this.addSpriteSheet('ohren', "assets/img/body/ohren.png", 700, 990 );
+	this.addSpriteSheet('haare', "assets/img/body/haare.png", 700, 990 );
 
 
 };
