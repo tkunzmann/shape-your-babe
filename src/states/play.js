@@ -17,6 +17,8 @@ TemplateGame.Play.create = function () {
 
 	Kiwi.State.prototype.create.call( this );
 
+  this.baby = new Kiwi.Group(this);
+
 // Grundform
 	this.grundform = new Kiwi.GameObjects.StaticImage(
 		this, this.textures.grundform, 0, 0) ;
@@ -72,7 +74,7 @@ TemplateGame.Play.create = function () {
 
 // Ohren
 		this.ohren = new Kiwi.GameObjects.Sprite(
-			this, this.textures.ohren, 700, 990) ;
+			this, this.textures.ohren, 900, 990) ;
 		this.ohren.cellIndex = 0;
 		this.ohren.x = 0;
 		this.ohren.y = 0;
@@ -86,7 +88,7 @@ TemplateGame.Play.create = function () {
 
 // Hintergrund
 		this.bg = new Kiwi.GameObjects.Sprite(
-			this, this.textures.bg, 700, 990) ;
+			this, this.textures.bg, 900, 990) ;
 		this.bg.cellIndex = 0;
 		this.bg.x = 0;
 		this.bg.y = 0;
@@ -158,16 +160,22 @@ TemplateGame.Play.create = function () {
 	*/
 
 	this.addChild(this.bg);
-	this.addChild(this.grundform);
-	this.addChild(this.arme);
-	this.addChild(this.beine);
-	this.addChild(this.backen);
-	this.addChild(this.windeln);
-	this.addChild(this.augen);
-	this.addChild(this.nasen);
-	this.addChild(this.muender);
-	this.addChild(this.ohren);
-	this.addChild(this.haare);
+
+	this.baby.addChild(this.grundform);
+	this.baby.addChild(this.arme);
+	this.baby.addChild(this.beine);
+	this.baby.addChild(this.backen);
+	this.baby.addChild(this.windeln);
+	this.baby.addChild(this.augen);
+	this.baby.addChild(this.nasen);
+	this.baby.addChild(this.muender);
+	this.baby.addChild(this.ohren);
+	this.baby.addChild(this.haare);
+	this.addChild(this.baby);
+
+	this.baby.x = 100;
+	this.baby.y = 0;
+
 
 	this.addChild(this.btnArme);
 	this.btnArme.input.onUp.add(this.switchArme, this);
