@@ -23,6 +23,10 @@ TemplateGame.Play.create = function () {
 	this.grundform = new Kiwi.GameObjects.StaticImage(
 		this, this.textures.grundform, 0, 0) ;
 
+// Banner
+	this.banner = new Kiwi.GameObjects.StaticImage(
+		this, this.textures.banner, 0, 0) ;
+
 // Arme
 		this.arme = new Kiwi.GameObjects.Sprite(
 			this, this.textures.arme, 700, 990) ;
@@ -172,6 +176,7 @@ TemplateGame.Play.create = function () {
 	this.baby.addChild(this.ohren);
 	this.baby.addChild(this.haare);
 	this.addChild(this.baby);
+	this.addChild(this.banner);
 
 	this.baby.x = 100;
 	this.baby.y = 0;

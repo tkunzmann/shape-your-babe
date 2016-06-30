@@ -47,6 +47,7 @@ TemplateGame.Loading.preload = function () {
 	this.addSpriteSheet( "icons", "assets/img/kiwijs-icons.png", 100, 90 );
 
   this.addImage('grundform', 'assets/img/body/grundform.png');
+  this.addImage('banner', 'assets/img/banner.png');
 	this.addSpriteSheet('bg', "assets/img/bg.png", 900, 990 );
 	this.addSpriteSheet('buttons', "assets/img/buttons.png", 80, 80, true, 22, 11, 2);
 
