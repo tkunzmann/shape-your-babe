@@ -49,7 +49,7 @@ TemplateGame.Loading.preload = function () {
   this.addImage('grundform', 'assets/img/body/grundform.png');
   this.addImage('banner', 'assets/img/banner.png');
 	this.addSpriteSheet('bg', "assets/img/bg.png", 900, 990 );
-	this.addSpriteSheet('buttons', "assets/img/buttons.png", 80, 80, true, 22, 11, 2);
+	this.addSpriteSheet('buttons', "assets/img/buttons.png", 80, 80, true, 24, 12, 2);
 
 	this.addSpriteSheet('arme', "assets/img/body/arme.png", 700, 990 );
 	this.addSpriteSheet('beine', "assets/img/body/beine.png", 700, 990 );

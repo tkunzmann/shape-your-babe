@@ -159,6 +159,18 @@ TemplateGame.Play.create = function () {
 		this.btnBg.y = 560;
 
 
+		this.btnShuffle= new Kiwi.GameObjects.Sprite(
+			this, this.textures.buttons, 0, 80) ;
+		this.btnShuffle.cellIndex = 18;
+		this.btnShuffle.x = 0;
+		this.btnShuffle.y = 800;
+
+		this.btnReset= new Kiwi.GameObjects.Sprite(
+			this, this.textures.buttons, 0, 80) ;
+		this.btnReset.cellIndex = 22;
+		this.btnReset.x = 0;
+		this.btnReset.y = 880;
+
 	/*
 	* Replace with your own game creation code here...
 	*/
@@ -221,6 +233,14 @@ TemplateGame.Play.create = function () {
 	this.addChild(this.btnBg);
 	this.btnBg.input.onUp.add(this.switchBg, this);
 	this.btnBg.input.onDown.add(this.switchButton, this);
+
+	this.addChild(this.btnShuffle);
+	this.btnShuffle.input.onUp.add(this.shuffle, this);
+	this.btnShuffle.input.onDown.add(this.switchButton, this);
+
+	this.addChild(this.btnReset);
+	this.btnReset.input.onUp.add(this.reset, this);
+	this.btnReset.input.onDown.add(this.switchButton, this);
 
 };
 
@@ -319,6 +339,46 @@ TemplateGame.Play.switchBg = function(sprite) {
 	sprite.cellIndex = sprite.cellIndex - 1;
 }
 
+TemplateGame.Play.shuffle = function(sprite) {
+	this.bg.cellIndex = getRandomInt(0,4);
+	this.arme.cellIndex = getRandomInt(0,3);
+	this.augen.cellIndex = getRandomInt(0,20);
+	this.backen.cellIndex = getRandomInt(0,7);
+	this.beine.cellIndex = getRandomInt(0,3);
+	this.haare.cellIndex = getRandomInt(0,20);
+	this.muender.cellIndex = getRandomInt(0,20);
+	this.nasen.cellIndex = getRandomInt(0,20);
+	this.ohren.cellIndex = getRandomInt(0,20);
+	this.windeln.cellIndex = getRandomInt(0,20);
+
+	sprite.cellIndex = sprite.cellIndex - 1;
+}
+
+TemplateGame.Play.reset = function(sprite) {
+	this.bg.cellIndex = 0;
+	this.arme.cellIndex = 0;
+	this.augen.cellIndex = 0;
+	this.backen.cellIndex = 0;
+	this.beine.cellIndex = 0;
+	this.haare.cellIndex = 0;
+	this.muender.cellIndex = 0;
+	this.nasen.cellIndex = 0;
+	this.ohren.cellIndex = 0;
+	this.windeln.cellIndex = 0;
+
+	sprite.cellIndex = sprite.cellIndex - 1;
+}
+
+
+/**
+ * Quelle: http://stackoverflow.com/a/10134261/2221057
+ *
+ * Returns a random integer between min and max
+ * Using Math.round() will give you a non-uniform distribution!
+ */
+function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 TemplateGame.Play.update = function() {
 
