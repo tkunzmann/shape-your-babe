@@ -225,7 +225,7 @@ TemplateGame.Play.switchButton = function(sprite) {
 
 
 TemplateGame.Play.switchArme = function(sprite) {
-	if (this.arme.cellIndex < 1) {
+	if (this.arme.cellIndex < 2) {
 		this.arme.cellIndex = this.arme.cellIndex + 1;
 	} else {
 		this.arme.cellIndex = 0;
@@ -234,7 +234,7 @@ TemplateGame.Play.switchArme = function(sprite) {
 }
 
 TemplateGame.Play.switchBeine = function(sprite) {
-	if (this.beine.cellIndex < 1) {
+	if (this.beine.cellIndex < 2) {
 		this.beine.cellIndex = this.beine.cellIndex + 1;
 	} else {
 		this.beine.cellIndex = 0;
@@ -243,7 +243,7 @@ TemplateGame.Play.switchBeine = function(sprite) {
 }
 
 TemplateGame.Play.switchBacken = function(sprite) {
-	if (this.backen.cellIndex < 2) {
+	if (this.backen.cellIndex < 6) {
 		this.backen.cellIndex = this.backen.cellIndex + 1;
 	} else {
 		this.backen.cellIndex = 0;
@@ -252,7 +252,7 @@ TemplateGame.Play.switchBacken = function(sprite) {
 }
 
 TemplateGame.Play.switchWindeln = function(sprite) {
-	if (this.windeln.cellIndex < 2) {
+	if (this.windeln.cellIndex < 18) {
 		this.windeln.cellIndex = this.windeln.cellIndex + 1;
 	} else {
 		this.windeln.cellIndex = 0;
@@ -270,7 +270,7 @@ TemplateGame.Play.switchAugen = function(sprite) {
 }
 
 TemplateGame.Play.switchNasen = function(sprite) {
-	if (this.nasen.cellIndex < 17) {
+	if (this.nasen.cellIndex < 19) {
 		this.nasen.cellIndex = this.nasen.cellIndex + 1;
 	} else {
 		this.nasen.cellIndex = 0;
@@ -279,7 +279,7 @@ TemplateGame.Play.switchNasen = function(sprite) {
 }
 
 TemplateGame.Play.switchMuender = function(sprite) {
-	if (this.muender.cellIndex < 14) {
+	if (this.muender.cellIndex < 19) {
 		this.muender.cellIndex = this.muender.cellIndex + 1;
 	} else {
 		this.muender.cellIndex = 0;
@@ -288,7 +288,7 @@ TemplateGame.Play.switchMuender = function(sprite) {
 }
 
 TemplateGame.Play.switchOhren = function(sprite) {
-	if (this.ohren.cellIndex < 9) {
+	if (this.ohren.cellIndex < 19) {
 		this.ohren.cellIndex = this.ohren.cellIndex + 1;
 	} else {
 		this.ohren.cellIndex = 0;
@@ -297,7 +297,7 @@ TemplateGame.Play.switchOhren = function(sprite) {
 }
 
 TemplateGame.Play.switchHaare = function(sprite) {
-	if (this.haare.cellIndex < 5) {
+	if (this.haare.cellIndex < 19) {
 		this.haare.cellIndex = this.haare.cellIndex + 1;
 	} else {
 		this.haare.cellIndex = 0;
