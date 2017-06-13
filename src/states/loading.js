@@ -61,5 +61,7 @@ TemplateGame.Loading.preload = function () {
 	this.addSpriteSheet('ohren', "assets/img/body/ohren.png", 700, 990 );
 	this.addSpriteSheet('haare', "assets/img/body/haare.png", 700, 990 );
 
+	this.addSpriteSheet('text1', "assets/img/text1.png", 580, 920 );
+	this.addSpriteSheet('text2', "assets/img/text2.png", 580, 920 );
 
 };

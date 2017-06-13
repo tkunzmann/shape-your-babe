@@ -171,6 +171,64 @@ TemplateGame.Play.create = function () {
 		this.btnReset.x = 0;
 		this.btnReset.y = 880;
 
+
+    // Menu
+    this.menu = new Kiwi.HUD.Widget.Menu( this.game, 840, 10 );
+    this.game.huds.defaultHUD.addWidget( this.menu );
+
+	// Text 1
+	this.text1 = new Kiwi.GameObjects.Sprite(
+		this, this.textures.text1, 580, 920) ;
+	this.text1.cellIndex = 0;
+	this.text1.x = 910;
+	this.text1.y = 60;
+	this.text1.visible = true;
+	this.addChild(this.text1);
+
+	// Text 2
+	this.text2 = new Kiwi.GameObjects.Sprite(
+		this, this.textures.text2, 580, 920) ;
+	this.text2.cellIndex = 0;
+	this.text2.x = 910;
+	this.text2.y = 60;
+	this.text2.visible = false;
+	this.addChild(this.text2);
+
+    // Button: Projekt
+    this.myButton1 = new Kiwi.HUD.Widget.MenuItem( this.game, 'Projekt', 70, 0 );
+    this.myButton1.style.color = 'white';
+    this.myButton1.style.display = 'block';
+    this.myButton1.style.boxSizing = 'border-box';
+    this.myButton1.style.width = '100px';
+    this.myButton1.style.textAlign = 'center';
+    this.myButton1.style.cursor = 'pointer';
+    this.myButton1.style.padding = '0.5em 1em';
+    this.myButton1.style.backgroundColor = '#9c0';
+    this.menu.addMenuItem( this.myButton1 );
+
+
+    // Button: Hilfe
+    this.myButton2 = new Kiwi.HUD.Widget.MenuItem( this.game, 'Hilfe', 180, 0 );
+    this.myButton2.style.color = 'white';
+    this.myButton2.style.display = 'block';
+    this.myButton2.style.boxSizing = 'border-box';
+    this.myButton2.style.width = '100px';
+    this.myButton2.style.textAlign = 'center';
+    this.myButton2.style.cursor = 'pointer';
+    this.myButton2.style.padding = '0.5em 1em';
+    this.myButton2.style.backgroundColor = '#c09';
+    this.menu.addMenuItem( this.myButton2 );
+
+    // Umschalten: Projekte/Hilfe
+	this.menu.getMenuItem(0).input.onDown.add( function () {
+		this.text1.visible = true;
+        this.text2.visible = false;
+    }, this );
+	this.menu.getMenuItem(1).input.onDown.add( function () {
+		this.text1.visible = false;
+        this.text2.visible = true;
+    }, this );
+
 	/*
 	* Replace with your own game creation code here...
 	*/
