@@ -17,6 +17,9 @@ TemplateGame.Play.create = function () {
 
 	Kiwi.State.prototype.create.call( this );
 
+	// Prices
+	this.prices = {};
+
   this.baby = new Kiwi.Group(this);
 
 // Grundform
@@ -33,6 +36,7 @@ TemplateGame.Play.create = function () {
 		this.arme.cellIndex = 0;
 		this.arme.x = 0;
 		this.arme.y = 0;
+        this.prices['arme'] = [ 0, 300, 700];
 
 // Beine
 		this.beine = new Kiwi.GameObjects.Sprite(
@@ -40,6 +44,7 @@ TemplateGame.Play.create = function () {
 		this.beine.cellIndex = 0;
 		this.beine.x = 0;
 		this.beine.y = 0;
+		this.prices['beine'] = [ 0, 200, 300];
 
 // Backen
 		this.backen = new Kiwi.GameObjects.Sprite(
@@ -47,6 +52,7 @@ TemplateGame.Play.create = function () {
 		this.backen.cellIndex = 0;
 		this.backen.x = 0;
 		this.backen.y = 0;
+		this.prices['backen'] = [ 0, 300, 300, 400, 300, 400, 300];
 
 // Windeln
 		this.windeln = new Kiwi.GameObjects.Sprite(
@@ -54,6 +60,7 @@ TemplateGame.Play.create = function () {
 		this.windeln.cellIndex = 0;
 		this.windeln.x = 0;
 		this.windeln.y = 0;
+		this.prices['windeln'] = [ 0, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
 
 // Augen
 		this.augen = new Kiwi.GameObjects.Sprite(
@@ -61,6 +68,7 @@ TemplateGame.Play.create = function () {
 		this.augen.cellIndex = 0;
 		this.augen.x = 0;
 		this.augen.y = 0;
+		this.prices['augen'] = [ 0, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
 
 // Nasen
 		this.nasen = new Kiwi.GameObjects.Sprite(
@@ -68,6 +76,7 @@ TemplateGame.Play.create = function () {
 		this.nasen.cellIndex = 0;
 		this.nasen.x = 0;
 		this.nasen.y = 0;
+		this.prices['nasen'] = [ 0, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
 
 // Muender
 		this.muender = new Kiwi.GameObjects.Sprite(
@@ -75,6 +84,7 @@ TemplateGame.Play.create = function () {
 		this.muender.cellIndex = 0;
 		this.muender.x = 0;
 		this.muender.y = 0;
+		this.prices['muender'] = [ 0, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
 
 // Ohren
 		this.ohren = new Kiwi.GameObjects.Sprite(
@@ -82,6 +92,7 @@ TemplateGame.Play.create = function () {
 		this.ohren.cellIndex = 0;
 		this.ohren.x = 0;
 		this.ohren.y = 0;
+		this.prices['ohren'] = [ 0, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
 
 // Haare
 		this.haare = new Kiwi.GameObjects.Sprite(
@@ -89,6 +100,7 @@ TemplateGame.Play.create = function () {
 		this.haare.cellIndex = 0;
 		this.haare.x = 0;
 		this.haare.y = 0;
+		this.prices['haare'] = [ 0, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
 
 // Hintergrund
 		this.bg = new Kiwi.GameObjects.Sprite(
@@ -229,6 +241,13 @@ TemplateGame.Play.create = function () {
         this.text2.visible = true;
     }, this );
 
+
+// Preis
+	this.myTotals = new Kiwi.HUD.Widget.TextField( this.game, '0', 800, 930 );
+    this.game.huds.defaultHUD.addWidget( this.myTotals );
+    this.myTotals.style.color = '#000';
+
+
 	/*
 	* Replace with your own game creation code here...
 	*/
@@ -300,10 +319,30 @@ TemplateGame.Play.create = function () {
 	this.btnReset.input.onUp.add(this.reset, this);
 	this.btnReset.input.onDown.add(this.switchButton, this);
 
+	// Berechnung starten
+	this.recalculateTotal();
+
 };
 
 TemplateGame.Play.switchButton = function(sprite) {
 	sprite.cellIndex = sprite.cellIndex + 1;
+}
+
+// Neuberechnung Gesamtpreis
+TemplateGame.Play.recalculateTotal = function () {
+	var sum = 20000;
+
+	sum = sum + this.prices['arme'][this.arme.cellIndex];
+	sum = sum + this.prices['beine'][this.beine.cellIndex];
+	sum = sum + this.prices['backen'][this.backen.cellIndex];
+	sum = sum + this.prices['windeln'][this.windeln.cellIndex];
+	sum = sum + this.prices['augen'][this.augen.cellIndex];
+	sum = sum + this.prices['nasen'][this.nasen.cellIndex];
+	sum = sum + this.prices['muender'][this.muender.cellIndex];
+	sum = sum + this.prices['ohren'][this.ohren.cellIndex];
+	sum = sum + this.prices['haare'][this.haare.cellIndex];
+
+	this.myTotals.text = "EUR " + sum + ",-";
 }
 
 
@@ -314,6 +353,7 @@ TemplateGame.Play.switchArme = function(sprite) {
 		this.arme.cellIndex = 0;
 	}
 	sprite.cellIndex = sprite.cellIndex - 1;
+	this.recalculateTotal();
 }
 
 TemplateGame.Play.switchBeine = function(sprite) {
@@ -323,6 +363,7 @@ TemplateGame.Play.switchBeine = function(sprite) {
 		this.beine.cellIndex = 0;
 	}
 	sprite.cellIndex = sprite.cellIndex - 1;
+	this.recalculateTotal();
 }
 
 TemplateGame.Play.switchBacken = function(sprite) {
@@ -332,6 +373,7 @@ TemplateGame.Play.switchBacken = function(sprite) {
 		this.backen.cellIndex = 0;
 	}
 	sprite.cellIndex = sprite.cellIndex - 1;
+	this.recalculateTotal();
 }
 
 TemplateGame.Play.switchWindeln = function(sprite) {
@@ -341,6 +383,7 @@ TemplateGame.Play.switchWindeln = function(sprite) {
 		this.windeln.cellIndex = 0;
 	}
 	sprite.cellIndex = sprite.cellIndex - 1;
+	this.recalculateTotal();
 }
 
 TemplateGame.Play.switchAugen = function(sprite) {
@@ -350,6 +393,7 @@ TemplateGame.Play.switchAugen = function(sprite) {
 		this.augen.cellIndex = 0;
 	}
 	sprite.cellIndex = sprite.cellIndex - 1;
+	this.recalculateTotal();
 }
 
 TemplateGame.Play.switchNasen = function(sprite) {
@@ -359,6 +403,7 @@ TemplateGame.Play.switchNasen = function(sprite) {
 		this.nasen.cellIndex = 0;
 	}
 	sprite.cellIndex = sprite.cellIndex - 1;
+	this.recalculateTotal();
 }
 
 TemplateGame.Play.switchMuender = function(sprite) {
@@ -368,6 +413,7 @@ TemplateGame.Play.switchMuender = function(sprite) {
 		this.muender.cellIndex = 0;
 	}
 	sprite.cellIndex = sprite.cellIndex - 1;
+	this.recalculateTotal();
 }
 
 TemplateGame.Play.switchOhren = function(sprite) {
@@ -377,6 +423,7 @@ TemplateGame.Play.switchOhren = function(sprite) {
 		this.ohren.cellIndex = 0;
 	}
 	sprite.cellIndex = sprite.cellIndex - 1;
+	this.recalculateTotal();
 }
 
 TemplateGame.Play.switchHaare = function(sprite) {
@@ -386,6 +433,7 @@ TemplateGame.Play.switchHaare = function(sprite) {
 		this.haare.cellIndex = 0;
 	}
 	sprite.cellIndex = sprite.cellIndex - 1;
+	this.recalculateTotal();
 }
 
 TemplateGame.Play.switchBg = function(sprite) {
@@ -395,21 +443,23 @@ TemplateGame.Play.switchBg = function(sprite) {
 		this.bg.cellIndex = 0;
 	}
 	sprite.cellIndex = sprite.cellIndex - 1;
+	this.recalculateTotal();
 }
 
 TemplateGame.Play.shuffle = function(sprite) {
 	this.bg.cellIndex = getRandomInt(0,4);
 	this.arme.cellIndex = getRandomInt(0,3);
-	this.augen.cellIndex = getRandomInt(0,20);
+	this.augen.cellIndex = getRandomInt(0,19);
 	this.backen.cellIndex = getRandomInt(0,7);
 	this.beine.cellIndex = getRandomInt(0,3);
 	this.haare.cellIndex = getRandomInt(0,20);
 	this.muender.cellIndex = getRandomInt(0,20);
 	this.nasen.cellIndex = getRandomInt(0,20);
 	this.ohren.cellIndex = getRandomInt(0,20);
-	this.windeln.cellIndex = getRandomInt(0,20);
+	this.windeln.cellIndex = getRandomInt(0,19);
 
 	sprite.cellIndex = sprite.cellIndex - 1;
+	this.recalculateTotal();
 }
 
 TemplateGame.Play.reset = function(sprite) {
@@ -425,6 +475,7 @@ TemplateGame.Play.reset = function(sprite) {
 	this.windeln.cellIndex = 0;
 
 	sprite.cellIndex = sprite.cellIndex - 1;
+	this.recalculateTotal();
 }
 
 
@@ -437,6 +488,7 @@ TemplateGame.Play.reset = function(sprite) {
 function getRandomInt (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 
 TemplateGame.Play.update = function() {
 
