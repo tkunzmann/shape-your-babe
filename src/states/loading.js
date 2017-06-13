@@ -63,5 +63,8 @@ TemplateGame.Loading.preload = function () {
 
 	this.addSpriteSheet('text1', "assets/img/text1.png", 580, 920 );
 	this.addSpriteSheet('text2', "assets/img/text2.png", 580, 920 );
+	this.addSpriteSheet('text3', "assets/img/text3.png", 580, 920 );
+
+	this.addSpriteSheet('cart', "assets/img/cart.png", 40, 40 );
 
 };

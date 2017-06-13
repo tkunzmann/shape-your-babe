@@ -206,6 +206,15 @@ TemplateGame.Play.create = function () {
 	this.text2.visible = false;
 	this.addChild(this.text2);
 
+	// Text 3
+	this.text3 = new Kiwi.GameObjects.Sprite(
+		this, this.textures.text3, 580, 920) ;
+	this.text3.cellIndex = 0;
+	this.text3.x = 910;
+	this.text3.y = 60;
+	this.text3.visible = false;
+	this.addChild(this.text3);
+
     // Button: Projekt
     this.myButton1 = new Kiwi.HUD.Widget.MenuItem( this.game, 'Projekt', 70, 0 );
     this.myButton1.style.color = 'white';
@@ -231,22 +240,50 @@ TemplateGame.Play.create = function () {
     this.myButton2.style.backgroundColor = '#c09';
     this.menu.addMenuItem( this.myButton2 );
 
-    // Umschalten: Projekte/Hilfe
+	// Preis
+	this.myTotals = new Kiwi.HUD.Widget.Button( this.game, 'EUR 0,-', 450, 0 );
+    this.myTotals.style.color = 'white';
+    this.myTotals.style.display = 'block';
+    this.myTotals.style.boxSizing = 'border-box';
+    this.myTotals.style.width = '150px';
+    this.myTotals.style.textAlign = 'center';
+    this.myTotals.style.cursor = 'pointer';
+    this.myTotals.style.padding = '0.5em 1em';
+    this.myTotals.style.backgroundColor = '#09c';
+    this.menu.addMenuItem( this.myTotals );
+
+	// Umschalten: Projekte/Hilfe
 	this.menu.getMenuItem(0).input.onDown.add( function () {
 		this.text1.visible = true;
         this.text2.visible = false;
+        this.text3.visible = false;
     }, this );
 	this.menu.getMenuItem(1).input.onDown.add( function () {
 		this.text1.visible = false;
         this.text2.visible = true;
+        this.text3.visible = false;
     }, this );
 
+	// Click auf Warenkorb
+	this.menu.getMenuItem(2).input.onDown.add( function () {
+		this.text1.visible = false;
+        this.text2.visible = false;
+        this.text3.visible = true;
+    }, this );
 
-// Preis
-	this.myTotals = new Kiwi.HUD.Widget.TextField( this.game, '0', 800, 930 );
-    this.game.huds.defaultHUD.addWidget( this.myTotals );
-    this.myTotals.style.color = '#000';
+	// Einkaufswagen
+	this.cart= new Kiwi.GameObjects.Sprite(
+			this, this.textures.cart, 0, 40) ;
+		this.cart.cellIndex = 0;
+		this.cart.x = 1450;
+		this.cart.y = 10;
+	this.addChild(this.cart);
 
+	this.cart.input.onDown.add( function () {
+		this.text1.visible = false;
+        this.text2.visible = false;
+        this.text3.visible = true;
+    }, this );
 
 	/*
 	* Replace with your own game creation code here...
