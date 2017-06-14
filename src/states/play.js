@@ -237,7 +237,7 @@ TemplateGame.Play.create = function () {
     this.myButton2.style.textAlign = 'center';
     this.myButton2.style.cursor = 'pointer';
     this.myButton2.style.padding = '0.5em 1em';
-    this.myButton2.style.backgroundColor = '#c09';
+    this.myButton2.style.backgroundColor = '#354b56';
     this.menu.addMenuItem( this.myButton2 );
 
 	// Preis
@@ -249,7 +249,7 @@ TemplateGame.Play.create = function () {
     this.myTotals.style.textAlign = 'center';
     this.myTotals.style.cursor = 'pointer';
     this.myTotals.style.padding = '0.5em 1em';
-    this.myTotals.style.backgroundColor = '#09c';
+    this.myTotals.style.backgroundColor = '#354b56';
     this.menu.addMenuItem( this.myTotals );
 
 	// Umschalten: Projekte/Hilfe
