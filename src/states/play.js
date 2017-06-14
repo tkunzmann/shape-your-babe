@@ -224,7 +224,7 @@ TemplateGame.Play.create = function () {
     this.myButton1.style.textAlign = 'center';
     this.myButton1.style.cursor = 'pointer';
     this.myButton1.style.padding = '0.5em 1em';
-    this.myButton1.style.backgroundColor = '#9c0';
+    this.myButton1.style.backgroundColor = '46939c';
     this.menu.addMenuItem( this.myButton1 );
 
 
@@ -237,7 +237,7 @@ TemplateGame.Play.create = function () {
     this.myButton2.style.textAlign = 'center';
     this.myButton2.style.cursor = 'pointer';
     this.myButton2.style.padding = '0.5em 1em';
-    this.myButton2.style.backgroundColor = '#354b56';
+    this.myButton2.style.backgroundColor = '#46939c';
     this.menu.addMenuItem( this.myButton2 );
 
 	// Preis
