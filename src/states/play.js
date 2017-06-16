@@ -60,7 +60,7 @@ TemplateGame.Play.create = function () {
 		this.windeln.cellIndex = 0;
 		this.windeln.x = 0;
 		this.windeln.y = 0;
-		this.prices['windeln'] = [ 0, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
+		this.prices['windeln'] = [ 0, 20, 25, 15, 15, 30, 10, 10, 10, 10, 10, 10, 12, 12, 12, 12, 50, 5, 10, 0, 0];
 
 // Augen
 		this.augen = new Kiwi.GameObjects.Sprite(
@@ -68,7 +68,7 @@ TemplateGame.Play.create = function () {
 		this.augen.cellIndex = 0;
 		this.augen.x = 0;
 		this.augen.y = 0;
-		this.prices['augen'] = [ 0, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
+		this.prices['augen'] = [ 0, 200, 300, 400, 800, 1000, 300, 1500, 300, 2000, 150, 450, 500, 200, 50, 2400, 900, 500, 1000, 300, 300];
 
 // Nasen
 		this.nasen = new Kiwi.GameObjects.Sprite(
@@ -76,7 +76,7 @@ TemplateGame.Play.create = function () {
 		this.nasen.cellIndex = 0;
 		this.nasen.x = 0;
 		this.nasen.y = 0;
-		this.prices['nasen'] = [ 0, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
+		this.prices['nasen'] = [ 0, 300, 400, 100, 1000, 200, 300, 100, 50, 650, 700, 2000, 1200, 50, 90, 900, 800, 300, 1200, 2200, 1000];
 
 // Muender
 		this.muender = new Kiwi.GameObjects.Sprite(
@@ -84,7 +84,7 @@ TemplateGame.Play.create = function () {
 		this.muender.cellIndex = 0;
 		this.muender.x = 0;
 		this.muender.y = 0;
-		this.prices['muender'] = [ 0, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
+		this.prices['muender'] = [ 0, 500, 700, 600, 400, 600, 300, 900, 900, 400, 1000, 100, 250, 50, 1500, 1300, 600, 1400, 20, 20, 1300];
 
 // Ohren
 		this.ohren = new Kiwi.GameObjects.Sprite(
@@ -92,7 +92,7 @@ TemplateGame.Play.create = function () {
 		this.ohren.cellIndex = 0;
 		this.ohren.x = 0;
 		this.ohren.y = 0;
-		this.prices['ohren'] = [ 0, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
+		this.prices['ohren'] = [ 0, 1000, 1000, 1200, 300, 500, 500, 300, 1000, 1200, 800, 700, 700, 750, 900, 900, 200, 700, 1500, 550, 300];
 
 // Haare
 		this.haare = new Kiwi.GameObjects.Sprite(
@@ -100,7 +100,7 @@ TemplateGame.Play.create = function () {
 		this.haare.cellIndex = 0;
 		this.haare.x = 0;
 		this.haare.y = 0;
-		this.prices['haare'] = [ 0, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
+		this.prices['haare'] = [ 0, 1000, 800, 800, 600, 300, 900, 200, 1500, 1600, 1800, 900, 1200, 1000, 600, 400, 400, 500, 500, 200, 300];
 
 // Hintergrund
 		this.bg = new Kiwi.GameObjects.Sprite(
@@ -217,7 +217,7 @@ TemplateGame.Play.create = function () {
 
     // Button: Projekt
     this.myButton1 = new Kiwi.HUD.Widget.MenuItem( this.game, 'Projekt', 70, 0 );
-    this.myButton1.style.color = 'orange';
+    this.myButton1.style.color = 'white';
     this.myButton1.style.display = 'block';
     this.myButton1.style.boxSizing = 'border-box';
     this.myButton1.style.width = '100px';
@@ -230,7 +230,7 @@ TemplateGame.Play.create = function () {
 
     // Button: Hilfe
     this.myButton2 = new Kiwi.HUD.Widget.MenuItem( this.game, 'Hilfe', 180, 0 );
-    this.myButton2.style.color = 'orange';
+    this.myButton2.style.color = 'white';
     this.myButton2.style.display = 'block';
     this.myButton2.style.boxSizing = 'border-box';
     this.myButton2.style.width = '100px';
