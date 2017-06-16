@@ -217,20 +217,20 @@ TemplateGame.Play.create = function () {
 
     // Button: Projekt
     this.myButton1 = new Kiwi.HUD.Widget.MenuItem( this.game, 'Projekt', 70, 0 );
-    this.myButton1.style.color = 'white';
+    this.myButton1.style.color = 'orange';
     this.myButton1.style.display = 'block';
     this.myButton1.style.boxSizing = 'border-box';
     this.myButton1.style.width = '100px';
     this.myButton1.style.textAlign = 'center';
     this.myButton1.style.cursor = 'pointer';
     this.myButton1.style.padding = '0.5em 1em';
-    this.myButton1.style.backgroundColor = '46939c';
+    this.myButton1.style.backgroundColor = '#46939c';
     this.menu.addMenuItem( this.myButton1 );
 
 
     // Button: Hilfe
     this.myButton2 = new Kiwi.HUD.Widget.MenuItem( this.game, 'Hilfe', 180, 0 );
-    this.myButton2.style.color = 'white';
+    this.myButton2.style.color = 'orange';
     this.myButton2.style.display = 'block';
     this.myButton2.style.boxSizing = 'border-box';
     this.myButton2.style.width = '100px';
